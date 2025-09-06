@@ -1,0 +1,161 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class MainClass {
+        public static void Main(string[] args)          -     Рабочее пространство в c#
+        {
+           
+    }
+
+}
+
+
+#### Переменные ####
+int num = 23;
+float num_1 = 23.43f 
+bool isHappy = True;
+char sym = 'D';
+string str = "Hello";
+
+
+Можно получить значение переменной от полльзователя:
+
+num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(num);
+
+#### Условные операторы ####
+&& - И
+|| - ИЛИ
+
+
+Console.Write("Введите число: ");
+int num_1 = Convert.ToInt32(Console.ReadLine());
+if (num_1 > 10)
+{
+    Console.WriteLine("Ваше число " + num_1 + " больше 10");
+}
+else if (num_1 != 5 && num_1 < 10) {
+    Console.WriteLine("Ваше число меньше 10 и не равно 5");
+} else {
+    Console.WriteLine("Ваше число 5");
+} 
+
+Оператор switch - условный оператор, который будет перебирать значения переменной, если в case совпадет значение переменной, то будет выведен результат, находящийся в case. break завершает case. 
+Также есть default - он срабатывает тогда, когда ни один case не сработал.
+
+   Console.Write("Введите число: ");
+   int num_1 = Convert.ToInt32(Console.ReadLine()), b = 14;
+  switch (num_1)
+   {
+       case 4:
+           b = 50;
+           Console.WriteLine("Супер! Число b теперь равно: " + b);
+           break;
+       case 15:
+           Console.WriteLine("Ты попал в 15");
+           break;
+        default:
+    Console.WriteLine("Else!");
+    break;
+
+   }
+
+ 
+#### Циклы ####
+ЦИКЛ for
+  for (int i = 0; i <=100;  i+=15) {
+      Console.WriteLine("Elements i = " + i);
+  }
+
+Сначала в скобках записывается изначальное значение i
+Посередине значение, при выполнении которого цикл завершается
+Условия изменения переменной
+
+ЦИКЛ while
+  int num_1 = 10;
+
+  while (num_1 <= 160)
+  {
+      Console.WriteLine("Число равно: " + num_1);
+      num_1 *= 2;
+  }
+
+Работает с уже заданной переменной и работает до тех пор пока не выполниться условие заданное в скобках
+
+
+ЦИКЛ  do while
+ int i = 0;
+ do
+ {
+     Console.WriteLine("Число равно:" + i);
+     i++;
+ } while (i < 10);
+
+Работает также, как while, но даже если условие изначально неверно, то цикл 100% сработает 1 раз.
+
+#### Массивы ####
+ string[] names = new string[4]
+ {
+     "Mama", "Yasha", "Arisha", "Vadim"
+ };
+  
+ for (int i =0; i<names.Length; i++)
+ {
+     Console.Write(names[i] + ", ");
+ }
+
+#### Список List ####
+  List <int> nums = new List<int>();
+
+  nums.Add (1);   
+  nums.Add (2);   
+  nums.Add (3);   
+  nums.Add (4);
+  nums.RemoveAt (0);
+  nums.Remove(4);
+
+  for (int i = 0; i < nums.Count; i++)
+  {
+      Console.Write(nums[i] + ", ");
+     
+  }
+
+
+В список List добавляются элементы через .Add
+Их можно удалять через Remove (удаляет по совпадению со значением) и RemoveAt (удаляет по индексу)
+
+В цикле элементы списка перебираются через .Count, а не .Length
+
+#### Двумерный массив ####
+  int[,] num = new int[3, 3] {
+      {2,3,4}, {2,3,3}, {2,3,1}
+  };
+
+  Console.WriteLine(num[1,2]);
+
+Вызов элемента в двумерной массиве осуществляется через индекс вложенного массива и индекс элемента массива
+
+   int[,] num = new int[3, 4] {
+       {2,3,4,4}, {2,3,3,4}, {2,3,1,4}
+   };
+
+   for (int i = 0; i < 3; i++)
+   {
+       for(int j = 0; j < 4; j++)                                 -   первый цикл перебирает вложенные массивы, второй перебирает их элементы. Всё выводиться через двйной пробел и выноситься на следующую строку
+       {
+           Console.Write(num[i,j] + "  ");
+       }
+       Console.WriteLine(" ");
+   }
+
+
+#### Цикл foreach ####
+            int[] num = { 1, 2, 3 };
+
+            foreach (int el in num)
+            {
+                Console.WriteLine("Элемент: " + el);
+            }
+
+Цикл создан для перебора элементов массива
